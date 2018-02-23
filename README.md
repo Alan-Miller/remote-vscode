@@ -10,11 +10,8 @@
     "remote.dontShowPortAlreadyInUseError": false
 
     # host: which address to listen on
-
     # port: which port to use
-    
     # onstartup: whether to automatically launch the VS Code server when VS Code is started
-
     # dontShowPortAlreadyInUseError: whether to show an error if the server is already running
     ```
     NOTE: These are the defaults. I like the defaults.
@@ -40,7 +37,6 @@
     ssh -NR 52698:localhost:52698 YOUR_SERVER
 
     # -N prevents a new session (i.e., you want to connect without going into the server to work).
-
     # -R specifies direction, starting remotely and ending on local machine (opposite is -L)
     ```
 1. Open the file in VS Code. Run the following command:
@@ -48,9 +44,7 @@
     [rmate/rcode] -w -p 52698 file
 
     # You will not type brackets. You will choose the name you gave the command. 
-
     # The '-p 52698' is optional since the port is already 52698 by default. 
-
     # The -w is recommended. It waits for the edited file to be closed, then stops the server process. 
     # Example: rcode -w server/index.js
     ```
@@ -73,6 +67,5 @@
     netstat -ntpl | grep node
 
     # You can use -ntpl4 to just get ipv4 processes.
-    
     # You can use -ntpl6 for just ipv6 processes.
     ```
