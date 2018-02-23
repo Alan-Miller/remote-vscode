@@ -12,12 +12,18 @@
     # NOTE: These are the defaults. They determine which address to listen on, the port to use, whether to launch the VS Code server on startup, and whether to show an error when trying to launch the server when it is already running.
     ```
 1. Install rmate helper script on your server. This is a shell script to allow files to be edited on a remote server similar to TextMate's remote editing capability. We use the following command to download the script from the GitHub repo and put it in the /usr/local/bin/ folder. In your server, type the following command:
-    ```sh
+
+    <pre>
+
+    <code>
     sudo wget -O /usr/local/bin/[rmate/rcode] https://raw.github.com/aurora/rmate/master/rmate
 
     # NOTE
     # In the server filepath, you might find it more logical to call it rcode instead of rmate (because you will be editing with VS Code instead of TextMate). Whatever you call it, that will be the name of the command you use when editing files. Notice the GitHub repo URL does not change.
-    ```
+    </code>
+    
+    </pre>
+
 1. Make the command executable. The following code makes the helper script executable as a command. Use 'chmod a+x' to set all permission for you and your user group to allow the script to be executable. The filepath you give it will be the same as the filepath from the step above where you installed the script. Once this is done the command 'rcode' (or 'rmate', whatever you chose) will be a command you can run on the server.
 
     ```sh
