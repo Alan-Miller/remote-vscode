@@ -1,5 +1,8 @@
 # Remote VS Code
 
+## Overview
+Do you hate Vim? Me, too. Are you one of the [one million developers who has had to ask for help to exit Vim?](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/) Me, too. Do you love VS Code and miss it every time you have to edit a file on your server? Not me, not anymore. Now I edit those remote files in VS Code and life is lovely.
+
 ## Setup
 1. Install 'Remote VSCode' extension for Visual Studio Code.
 1. Check User Settings in VS Code (optional)
