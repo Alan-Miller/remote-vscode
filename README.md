@@ -38,13 +38,14 @@
 
     # -N prevents a new session (i.e., you want to connect without going into the server to work).
     # -R specifies direction, starting remotely and ending on local machine (opposite is -L)
+    # 52698:localhost:52698 connects 52698 on the remote server to 52698 on your machine.
     ```
 1. Open the file in VS Code. Run the following command:
     ```sh
-    [rmate/rcode] -w -p 52698 file
+    [rmate/rcode] -w file
 
     # You will not type brackets. You will choose the name you gave the command. 
-    # The '-p 52698' is optional since the port is already 52698 by default. 
+    # You can specify port 52698 with '-p 52698', but it's already the default.
     # The -w is recommended. It waits for the edited file to be closed, then stops the server process. 
     # Example: rcode -w server/index.js
     ```
