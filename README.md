@@ -9,20 +9,22 @@
     "remote.onstartup": false
     "remote.dontShowPortAlreadyInUseError": false
 
-    # NOTE: These are the defaults. They determine which address to listen on, the port to use, whether to launch the VS Code server on startup, and whether to show an error when trying to launch the server when it is already running.
+    # host: which address to listen on
+
+    # port: which port to use
+    
+    # onstartup: whether to automatically launch the VS Code server when VS Code is started
+
+    # dontShowPortAlreadyInUseError: whether to show an error if the server is already running
     ```
+    NOTE: These are the defaults. I like the defaults.
 1. Install rmate helper script on your server. This is a shell script to allow files to be edited on a remote server similar to TextMate's remote editing capability. We use the following command to download the script from the GitHub repo and put it in the /usr/local/bin/ folder. In your server, type the following command:
-
-    <pre>
-
-    <code>
+    ```sh
     sudo wget -O /usr/local/bin/[rmate/rcode] https://raw.github.com/aurora/rmate/master/rmate
 
-    # NOTE
-    # In the server filepath, you might find it more logical to call it rcode instead of rmate (because you will be editing with VS Code instead of TextMate). Whatever you call it, that will be the name of the command you use when editing files. Notice the GitHub repo URL does not change.
-    </code>
-    
-    </pre>
+    # Do not type the brackets. Call it rmate or rcode.
+    ```
+    NOTE: In the server filepath, you might find it logical to call it rcode instead of rmate (since you will be editing with VS Code, not TextMate). Whatever you call it, that will be the name of the command you use when editing files. The GitHub repo URL does not change.
 
 1. Make the command executable. The following code makes the helper script executable as a command. Use 'chmod a+x' to set all permission for you and your user group to allow the script to be executable. The filepath you give it will be the same as the filepath from the step above where you installed the script. Once this is done the command 'rcode' (or 'rmate', whatever you chose) will be a command you can run on the server.
 
@@ -37,19 +39,20 @@
     ```sh
     ssh -NR 52698:localhost:52698 YOUR_SERVER
 
-    # NOTE
-    # -N is an option to prevent a new session from opening (i.e., you want to connect to the server without actually going into the server to work).
-    # -R is an option to specify the direction of the ssh connection, starting remotely and ending on the local machine (-L would go the other direction).
+    # -N prevents a new session (i.e., you want to connect without going into the server to work).
+
+    # -R specifies direction, starting remotely and ending on local machine (opposite is -L)
     ```
 1. Open the file in VS Code. Run the following command:
     ```sh
     [rmate/rcode] -w -p 52698 file
 
-    # NOTES
-    # You will not type any brackets. You will choose rmate or rcode depending on what you named the command. 
+    # You will not type brackets. You will choose the name you gave the command. 
+
     # The '-p 52698' is optional since the port is already 52698 by default. 
-    # The -w option is recommended, since it tells the server to wait for the file to be closed in VS Code and then stop the rmate/rcode process. 
-    # As an example, if you rcode is your command, and the file you want to open is 'server/index.js', you would type 'rcode -w server/index.js'.
+
+    # The -w is recommended. It waits for the edited file to be closed, then stops the server process. 
+    # Example: rcode -w server/index.js
     ```
 
 
@@ -69,5 +72,7 @@
     ```sh
     netstat -ntpl | grep node
 
-    # NOTE: You can use -ntpl4 to just get ipv4 processes, or -ntpl6 for just ipv6 processes.
+    # You can use -ntpl4 to just get ipv4 processes.
+    
+    # You can use -ntpl6 for just ipv6 processes.
     ```
