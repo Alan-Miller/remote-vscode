@@ -38,7 +38,7 @@
 
     # -N prevents a new session (i.e., you want to connect without going into the server to work).
     # -R specifies direction, starting remotely and ending on local machine (opposite is -L)
-    # 52698:localhost:52698 connects 52698 on the remote server to 52698 on your machine.
+    # '52698:localhost:52698' connects 52698 on the remote server to 52698 on your machine.
     ```
 1. Open the file in VS Code. Run the following command:
     ```sh
