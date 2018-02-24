@@ -35,7 +35,7 @@ Do you hate Vim? Me, too. Are you one of the [one million developers who has had
 
 ## Use
 1. **Launch VS Code's server.** Type Ctrl/Cmd + Shift + P to open VS Code's command palette. If you start to type "Remote" you should see the command "Remote: Start Server". Selecting that will launch the server, which is listening on port 52698 (because that is the default setting when you install Remote VSCode).
-1. Open an SSH tunnel. An SSH tunnel is a secure connection between a local computer and a remote server to forward a port. By doing this, we are connecting our server-side rcode/rmate command to our local machine's VS Code editor (which is now running its own server to listen for the connection). Run the following command from your local machine:
+1. **Open an SSH tunnel.** An SSH tunnel is a secure connection between a local computer and a remote server to forward a port. By doing this, we are connecting our server-side rcode/rmate command to our local machine's VS Code editor (which is now running its own server to listen for the connection). Run the following command from your local machine:
     ```sh
     ssh -NR 52698:localhost:52698 YOUR_SERVER
 
